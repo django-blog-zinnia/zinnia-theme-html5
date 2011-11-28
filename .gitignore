@@ -14,3 +14,5 @@ src_eggs
 develop-eggs
 .installed.cfg
 .sass-cache
+django-apps-src
+zinnia_theme_html5.egg-info
