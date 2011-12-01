@@ -19,7 +19,7 @@
       {% else %}
       {% trans "Written on" %}
       {% endif %}
-      <abbr class="published" title="{{ object.creation_date|date:"c" }}Z">{{ object.creation_date|date:"DATE_FORMAT" }}</abbr>
+      <time datetime="{{ object.creation_date|date:"c" }}Z" pubdate="pubdate">{{ object.creation_date|date:"DATE_FORMAT" }}</time>
       {% if object.categories.count %}
       {% trans "in" %}
       {% for category in object.categories.all %}
