@@ -15,4 +15,5 @@ develop-eggs
 .installed.cfg
 .sass-cache
 django-apps-src
+demo_zinnia_html5/demo.db*
 zinnia_theme_html5.egg-info
