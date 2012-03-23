@@ -15,7 +15,7 @@ setup(name='zinnia-theme-html5',
       author_email=zinnia_html5.__email__,
       url=zinnia_html5.__url__,
 
-      packages=find_packages(exclude=['demo']),
+      packages=find_packages(exclude=['demo_zinnia_html5']),
       classifiers=[
           'Framework :: Django',
           'Development Status :: 5 - Production/Stable',
@@ -29,4 +29,3 @@ setup(name='zinnia-theme-html5',
       license=zinnia_html5.__license__,
       include_package_data=True,
       zip_safe=False)
-

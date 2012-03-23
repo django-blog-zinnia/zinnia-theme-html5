@@ -47,7 +47,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     )
 
-ROOT_URLCONF = 'demo.urls'
+ROOT_URLCONF = 'demo_zinnia_html5.urls'
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
@@ -79,6 +79,5 @@ INSTALLED_APPS = (
     'mptt',
     'zinnia',
     'tagging',
-    'django_xmlrpc',
     )
 
