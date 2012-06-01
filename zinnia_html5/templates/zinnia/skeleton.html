@@ -1,4 +1,5 @@
 {% load zinnia_tags i18n %}
+{% load url from future %}
 {% get_tags as entry_tags %}
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}">
@@ -13,7 +14,7 @@
     {% block meta %}{% endblock %}
     <link rel="pingback" href="/xmlrpc/" />
     <link rel="shortcut icon" href="{{ STATIC_URL }}zinnia/img/favicon.ico" />
-    <link rel="home" href="{% url zinnia_entry_archive_index %}" />
+    <link rel="home" href="{% url 'zinnia_entry_archive_index' %}" />
     <link rel="stylesheet" type="text/css" media="screen, projection" href="{{ STATIC_URL }}zinnia/css/screen.css" />
     <link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}zinnia/css/print.css" />
     <!--[if lt IE 8]>
@@ -28,24 +29,24 @@
         <nav>
           <ul class="top-navigation">
             <li>
-              <a href="{% url zinnia_sitemap %}" title="{% trans "Sitemap" %}" class="sitemap">
+              <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">
                 {% trans "Sitemap" %}
               </a>
             </li>
             <li>
-              <a href="{% url zinnia_entry_latest_feed %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">
+              <a href="{% url 'zinnia_entry_latest_feed' %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">
                 {% trans "RSS Feed" %}
               </a>
             </li>
           </ul>
         </nav>
         <h1>
-          <a href="{% url zinnia_entry_archive_index %}" title="Zinnia's Blog" rel="home">
+          <a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Blog" rel="home">
             Zinnia's Blog
           </a>
         </h1>
         <blockquote>
-          <p>Just another Zinnia weblog.</p>
+          <p>Just another Zinnia Weblog.</p>
         </blockquote>
         {% block breadcrumbs %}{% endblock %}
       </header>
@@ -56,7 +57,7 @@
         {% endblock %}
       </div>
       <div id="sidebar" role="complementary">
-        <aside class="welcome">
+        <aside id="widget-welcome" class="widget">
           <h3>Welcome!</h3>
           <p>
             This simple skin is the base template of the Zinnia application,
@@ -71,7 +72,7 @@
         {% endblock %}
       </div>
       <footer id="footer" role="contentinfo">
-        <p>Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="http://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.</p>
+        <p>Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.</p>
       </footer>
     </div>
   </body>
