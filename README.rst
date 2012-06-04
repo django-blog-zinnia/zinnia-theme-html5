@@ -22,5 +22,30 @@ Now Zinnia is HTML5 ready.
      loader if you have installed the package as an egg.
 
 
+HTML5 Validation
+================
+
+If you want to have strict HTML5 documents and pass the validation tests
+you must register the ``DraftHTML5ValidatorCleaner`` middleware to clean
+the templates of the not already supported attributes or relationships. ::
+
+    MIDDLEWARE_CLASSES = (
+        ... # Your middlewares
+        'zinnia_html5.middleware.DraftHTML5ValidatorCleaner',
+        )
+
+The problem is that HTML5 is still in draft, and some microformats are not
+already allowed by the on-line validators.
+
+Instead of rewriting all the Zinnia's templates it's easier to add this
+middleware and disable it when the HTML5 specifications will be completed
+and the on-line HTML5 validators up-to-date.
+
+.. note::
+   You need to install the `beautifulsoup4`_ and `html5lib`_ packages for
+   using this middleware.
+
 .. _`django-blog-zinnia`: http://www.django-blog-zinnia.com/
 .. _`Zinnia is installed`: http://django-blog-zinnia.com/documentation/getting-started/install/
+.. _`beautifulsoup4`: http://pypi.python.org/pypi/beautifulsoup4
+.. _`html5lib`: http://pypi.python.org/pypi/html5lib

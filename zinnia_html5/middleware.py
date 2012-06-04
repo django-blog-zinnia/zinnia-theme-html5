@@ -7,19 +7,19 @@ from django.utils.encoding import smart_str
 INVALID_A_RELS = re.compile(r'(shortlink|archives|trackback)')
 
 
-class DraftHTML5W3CValidatorCleaner(object):
+class DraftHTML5ValidatorCleaner(object):
     """
     This Middleware only exists for providing
-    a strict compliance with WC3C HTML5 Validator.
+    a strict compliance with HTML5 validators.
 
     The problem is that HTML5 is still in draft,
     and some microformats are not already allowed
-    by the validator program.
+    by the on-line validators.
 
-    Instead of rewriting all the Zinnia's templates
+    Instead of rewriting all the Zinnia's templates,
     it's easier to add this middleware and disable it
-    when the HTML5 specification is complete and
-    the W3C HTML5 validator up-to-date.
+    when the HTML5 specifications will be completed
+    and the on-line HTML5 validators up-to-date.
 
     So the HTML response will be cleaned of the
     unsupported attributes provided by Zinnia and

@@ -48,7 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'zinnia_html5.middleware.DraftHTML5W3CValidatorCleaner',
+    'zinnia_html5.middleware.DraftHTML5ValidatorCleaner',
     )
 
 ROOT_URLCONF = 'demo_zinnia_html5.urls'
