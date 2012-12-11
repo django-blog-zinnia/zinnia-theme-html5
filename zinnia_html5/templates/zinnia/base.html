@@ -2,6 +2,8 @@
 {% load zinnia_tags i18n %}
 {% load url from future %}
 
+{% block meta-keywords %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}}{% endblock %}
+
 {% block meta %}
     <meta name="generator" content="Zinnia {{ ZINNIA_VERSION }}" />
 {% endblock %}
@@ -22,10 +24,6 @@
 {% endblock %}
 
 {% block sidebar %}
-<aside id="widget-search" class="widget" role="search">
-  <h3>{% trans "Search" %}</h3>
-  {% include "zinnia/tags/search_form.html" %}
-</aside>
 <aside id="widget-categories" class="widget">
   <h3>{% trans "Categories" %}</h3>
   {% get_categories %}

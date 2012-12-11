@@ -1,16 +1,15 @@
-{% load zinnia_tags i18n %}
+{% load i18n %}
 {% load url from future %}
-{% get_tags as entry_tags %}
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
     <title>Zinnia's Blog - {% block title %}{% endblock %}</title>
     <meta name="robots" content="follow, all" />
-    <meta name="description" content="{% block meta-description %}Demonstration of the Zinnia Blog application.{% endblock %}" />
-    <meta name="keywords" content="{% block meta-keywords %}django, blog, zinnia, {{ entry_tags|join:", "}}{% endblock %}" />
-    <meta name="author" content="Fantomas42" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+    <meta name="description" content="{% block meta-description %}Demonstration of the Zinnia Blog application.{% endblock %}" />
+    <meta name="keywords" content="{% block meta-keywords %}django, blog, zinnia{% endblock %}" />
+    <meta name="author" content="Fantomas42" />
     {% block meta %}{% endblock %}
     <link rel="pingback" href="/xmlrpc/" />
     <link rel="shortcut icon" href="{{ STATIC_URL }}zinnia/img/favicon.ico" />
@@ -40,6 +39,12 @@
             </li>
           </ul>
         </nav>
+        <form method="get" action="{% url 'zinnia_entry_search' %}">
+          <p>
+            <input type="text" value="{% trans "Keywords..." %}" name="pattern" onfocus="this.value=''" />
+            <input type="submit" class="submitbutton" value="OK" />
+          </p>
+        </form>
         <h1>
           <a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Blog" rel="home">
             Zinnia's Blog
@@ -67,10 +72,6 @@
               </a>
             </li>
           </ul>
-        </div>
-        <div class="recents">
-          <h3>{% trans "Recent entries" %}</h3>
-          {% get_recent_entries %}
         </div>
         <div class="search">
           <h3>{% trans "Search" %}</h3>
