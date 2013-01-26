@@ -10,6 +10,8 @@ DATABASES = {'default':
               'NAME': os.path.join(os.path.dirname(__file__), 'demo.db')}
              }
 
+TIME_ZONE = 'Europe/Paris'
+
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
@@ -24,21 +26,30 @@ SITE_ID = 1
 
 LANGUAGE_CODE = 'en'
 
-LANGUAGES = (('en', gettext('English')),
-             ('fr', gettext('French')),
-             ('de', gettext('German')),
-             ('es', gettext('Spanish')),
-             ('it', gettext('Italian')),
-             ('nl', gettext('Dutch')),
-             ('hu', gettext('Hungarian')),
-             ('cs', gettext('Czech')),
-             ('sk', gettext('Slovak')),
-             ('ru', gettext('Russian')),
-             ('pl', gettext('Polish')),
-             ('eu', gettext('Basque')),
-             ('hr_HR', gettext('Croatian')),
-             ('pt_BR', gettext('Brazilian Portuguese')),
-             ('zh_CN', gettext('Simplified Chinese')),)
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('fr', gettext('French')),
+    ('de', gettext('German')),
+    ('es', gettext('Spanish')),
+    ('it', gettext('Italian')),
+    ('nl', gettext('Dutch')),
+    ('hu', gettext('Hungarian')),
+    ('cs', gettext('Czech')),
+    ('sk', gettext('Slovak')),
+    ('ru', gettext('Russian')),
+    ('pl', gettext('Polish')),
+    ('eu', gettext('Basque')),
+    ('ca', gettext('Catalan')),
+    ('tr', gettext('Turkish')),
+    ('hr_HR', gettext('Croatian')),
+    ('pt_BR', gettext('Brazilian Portuguese')),
+    ('fi_FI', gettext('Finnish (Finland)')),
+    ('zh_CN', gettext('Simplified Chinese')),
+)
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+)
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -49,14 +60,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.doc.XViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'zinnia_html5.middleware.DraftHTML5ValidatorCleaner',
-    )
+)
 
 ROOT_URLCONF = 'demo_zinnia_html5.urls'
-
-TEMPLATE_LOADERS = (
-    'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader',
-    )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -66,7 +72,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
     'zinnia.context_processors.version',
-    )
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -83,4 +89,4 @@ INSTALLED_APPS = (
     'mptt',
     'zinnia',
     'tagging',
-    )
+)
