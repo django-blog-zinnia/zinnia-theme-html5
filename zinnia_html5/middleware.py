@@ -51,8 +51,8 @@ class DraftHTML5ValidatorCleaner(object):
             self.update_content = True
 
     def process_response(self, request, response):
-        if not response.status_code == 200 or \
-               not '<html' in response.content:
+        if (not response.status_code == 200 or
+                not '<html' in response.content):
             return response
 
         self.update_content = False
