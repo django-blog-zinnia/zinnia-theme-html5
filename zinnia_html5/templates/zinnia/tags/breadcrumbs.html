@@ -1,13 +1,3 @@
 <nav>
-  <ul class="breadcrumbs">
-    {% for crumb in breadcrumbs %}
-    <li>
-      {% if crumb.url %}
-      <a href="{{ crumb.url }}" title="{{ crumb.name }}">{{ crumb.name }}</a>
-      {% else %}
-      {{ crumb.name }}
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
+  {% include "zinnia:zinnia/tags/breadcrumbs.html" %}
 </nav>
