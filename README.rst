@@ -9,7 +9,10 @@ Zinnia-theme-html5 is a python package providing HTML5 templates for
 Installation
 ============
 
-Once `Zinnia is installed`_ on your Django project and this package installed
+First of all you need to install and configure
+`django-app-namespace-template-loader`_ into your project.
+
+Then once `Zinnia is installed`_ on your Django project and this package installed
 on your `PYTHON_PATH`, simply register the `zinnia_html5` application in
 the `INSTALLED_APP` section of your project's settings.
 
@@ -46,6 +49,7 @@ and the on-line HTML5 validators up-to-date.
    using this middleware.
 
 .. _`django-blog-zinnia`: http://www.django-blog-zinnia.com/
-.. _`Zinnia is installed`: http://django-blog-zinnia.com/documentation/getting-started/install/
+.. _`django-app-namespace-template-loader`: https://github.com/Fantomas42/django-app-namespace-template-loader
+.. _`Zinnia is installed`: http://docs.django-blog-zinnia.com/en/latest/getting-started/install.html
 .. _`beautifulsoup4`: http://pypi.python.org/pypi/beautifulsoup4
 .. _`html5lib`: http://pypi.python.org/pypi/html5lib
