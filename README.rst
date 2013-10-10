@@ -12,9 +12,9 @@ Installation
 First of all you need to install and configure
 `django-app-namespace-template-loader`_ into your project.
 
-Then once `Zinnia is installed`_ on your Django project and this package installed
-on your `PYTHON_PATH`, simply register the `zinnia_html5` application in
-the `INSTALLED_APP` section of your project's settings.
+Then once `Zinnia is installed`_ on your Django project and this package
+installed on your `PYTHON_PATH`, simply register the `zinnia_html5`
+application in the `INSTALLED_APP` section of your project's settings.
 
 Now Zinnia is HTML5 ready.
 
