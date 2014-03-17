@@ -20,7 +20,7 @@
         <a href="{{ author.get_absolute_url }}" class="fn url{% if not author.get_full_name %} nickname{% endif %}" rel="author"
            title="{% blocktrans %}Show all {{ author }}'s entries{% endblocktrans %}">{{ author }}</a></span>{% if not forloop.last %}, {% endif %}
       {% endfor %}
-      {% trans "on" %}
+      {% trans "on" context "on date" %}
       {% else %}
       {% trans "Written on" %}
       {% endif %}
@@ -75,7 +75,7 @@
     {% if continue_reading and object_content.has_more %}
     <p class="continue-reading">
       <a href="{{ object.get_absolute_url }}"
-         title="{% blocktrans with object=object.title %}Continue reading {{ object }}{% endblocktrans %}"
+         title="{% blocktrans with object=object.title percent=object_content.remaining_percent|floatformat:0 %}{{ percent }}% of {{ object }} still remains to read.{% endblocktrans %}"
          rel="bookmark">
         {% trans "Continue reading" %}
       </a>
