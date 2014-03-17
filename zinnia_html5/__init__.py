@@ -1,5 +1,5 @@
 """zinnia_html5"""
-__version__ = '0.3.1'
+__version__ = '0.3.2'
 __license__ = 'BSD License'
 
 __author__ = 'Fantomas42'
