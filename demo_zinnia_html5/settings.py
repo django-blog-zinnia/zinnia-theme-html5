@@ -95,3 +95,5 @@ INSTALLED_APPS = (
     'zinnia_html5',
     'zinnia',
 )
+
+SILENCED_SYSTEM_CHECKS = ['1_6.W001']
