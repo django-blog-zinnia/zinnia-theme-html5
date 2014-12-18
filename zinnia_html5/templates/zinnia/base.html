@@ -1,5 +1,5 @@
 {% extends "zinnia:zinnia/base.html" %}
-{% load zinnia_tags i18n %}
+{% load zinnia i18n %}
 
 {% block sidebar %}
 <aside id="widget-welcome" class="widget">
@@ -12,11 +12,15 @@
   </p>
 </aside>
 <aside id="widget-categories" class="widget">
-  <h3>{% trans "Categories" %}</h3>
+  <h3>
+    <a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a>
+  </h3>
   {% get_categories %}
 </aside>
 <aside id="widget-authors" class="widget">
-  <h3>{% trans "Authors" %}</h3>
+  <h3>
+    <a href="{% url 'zinnia:author_list' %}">{% trans "Authors" %}</a>
+  </h3>
   {% get_authors %}
 </aside>
 <aside id="widget-calendar" class="widget">
@@ -24,7 +28,9 @@
   {% get_calendar_entries %}
 </aside>
 <aside id="widget-tags" class="widget">
-  <h3>{% trans "Tags" %}</h3>
+  <h3>
+    <a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a>
+  </h3>
   {% get_tag_cloud %}
 </aside>
 <aside id="widget-recents" class="widget">

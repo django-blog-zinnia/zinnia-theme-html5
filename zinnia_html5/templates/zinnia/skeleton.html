@@ -3,7 +3,7 @@
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
-    <title>Zinnia's Weblog - {% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
+    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Zinnia's Weblog</title>
     <meta name="robots" content="follow, all" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{% block meta-description %}{% trans "Just another Zinnia weblog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
@@ -11,12 +11,12 @@
     <meta name="author" content="Fantomas42" />
     {% block meta %}{% endblock meta %}
     <link rel="pingback" href="/xmlrpc/" />
-    <link rel="shortcut icon" href="{% static "zinnia/img/favicon.ico" %}" />
-    <link rel="home" href="{% url 'zinnia_entry_archive_index' %}" />
-    <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/css/screen.css" %}" />
-    <link rel="stylesheet" type="text/css" media="print" href="{% static "zinnia/css/print.css" %}" />
+    <link rel="shortcut icon" href="{% static "zinnia/theme/img/favicon.ico" %}" />
+    <link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/screen.css" %}" />
+    <link rel="stylesheet" type="text/css" media="print" href="{% static "zinnia/theme/css/print.css" %}" />
     <!--[if lt IE 8]>
-        <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/css/ie.css" %}" />
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/ie.css" %}" />
     <![endif]-->
     {% block link %}{% endblock link %}
     {% block script %}{% endblock script %}
@@ -27,25 +27,25 @@
         <nav>
           <ul class="top-navigation">
             <li>
-              <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">
+              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">
                 {% trans "Sitemap" %}
               </a>
             </li>
             <li>
-              <a href="{% url 'zinnia_entry_latest_feed' %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">
+              <a href="{% url 'zinnia:entry_latest_feed' %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">
                 {% trans "RSS Feed" %}
               </a>
             </li>
           </ul>
         </nav>
-        <form method="get" action="{% url 'zinnia_entry_search' %}">
+        <form method="get" action="{% url 'zinnia:entry_search' %}">
           <p>
             <input type="text" name="pattern" placeholder="{% trans "Keywords..." %}" {% if pattern %}value="{{ pattern }}"{% endif %} />
             <input type="submit" class="submitbutton" value="OK" />
           </p>
         </form>
         <h1>
-          <a href="{% url 'zinnia_entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
+          <a href="{% url 'zinnia:entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
             Zinnia's Weblog
           </a>
         </h1>
@@ -61,12 +61,12 @@
           <h3>{% trans "Useful links" %}</h3>
           <ul>
             <li>
-              <a href="{% url 'zinnia_entry_archive_index' %}" title="{% trans "Weblog index" %}">
+              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
                 {% trans "Weblog index" %}
               </a>
             </li>
             <li>
-              <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}">
+              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
                 {% trans "Sitemap" %}
               </a>
             </li>
